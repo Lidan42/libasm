@@ -56,53 +56,40 @@ void test_strcpy(void)
     printf("  errno = %d (attendu 0)\n", errno);
 }
 
-// /* ============================= */
-// /*          ft_strcmp            */
-// /* ============================= */
-// void test_strcmp(void)
-// {
-//     printf("\n=== ft_strcmp ===\n");
+/* ============================= */
+/*          ft_strcmp            */
+/* ============================= */
+void test_strcmp(void)
+{
+    printf("\n=== ft_strcmp ===\n");
 
-//     errno = 0;
-//     int r1 = ft_strcmp("hello", "hello");
-//     printf("ft_strcmp(\"hello\", \"hello\") = %d (attendu 0)\n", r1);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    int r1 = ft_strcmp("hello", "hello");
+    printf("ft_strcmp(\"hello\", \"hello\") = %d (attendu 0)\n", r1);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     int r2 = ft_strcmp("abc", "abd");
-//     printf("ft_strcmp(\"abc\", \"abd\")     = %d (attendu < 0)\n", r2);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    int r2 = ft_strcmp("abc", "abd");
+    printf("ft_strcmp(\"abc\", \"abd\")     = %d (attendu < 0)\n", r2);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     int r3 = ft_strcmp("abd", "abc");
-//     printf("ft_strcmp(\"abd\", \"abc\")     = %d (attendu > 0)\n", r3);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    int r3 = ft_strcmp("abd", "abc");
+    printf("ft_strcmp(\"abd\", \"abc\")     = %d (attendu > 0)\n", r3);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     int r4 = ft_strcmp("", "");
-//     printf("ft_strcmp(\"\", \"\")           = %d (attendu 0)\n", r4);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    int r4 = ft_strcmp("", "");
+    printf("ft_strcmp(\"\", \"\")           = %d (attendu 0)\n", r4);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     int r5 = ft_strcmp("a", "");
-//     printf("ft_strcmp(\"a\", \"\")          = %d (attendu > 0)\n", r5);
-//     printf("  errno = %d (attendu 0)\n", errno);
-// }
+    errno = 0;
+    int r5 = ft_strcmp("a", "");
+    printf("ft_strcmp(\"a\", \"\")          = %d (attendu > 0)\n", r5);
+    printf("  errno = %d (attendu 0)\n", errno);
+}
 
-/* ===============global  ft_strcpy
-
-ft_strcpy:
-    mov rax, rdi
-.loop:
-    mov al, byte [rsi]
-    mov byte [rdi], al
-    cmp byte [rdi], 0
-    je  .exit
-    inc rsi
-    inc rdi
-    jmp .loop
-.exit
-    ret============== */
+/* ============================= */
 /*          ft_write             */
 /* ============================= */
 void test_write(void)
@@ -187,7 +174,7 @@ int main(void)
 {
     test_strlen();
     test_strcpy();
-    /* test_strcmp(); */
+    test_strcmp();
     test_write();
     test_read();
     /* test_strdup(); */
