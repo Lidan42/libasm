@@ -113,33 +113,33 @@ void test_write(void)
     perror("  perror");
 }
 
-// /* ============================= */
-// /*          ft_read              */
-// /* ============================= */
-// void test_read(void)
-// {
-//     printf("\n=== ft_read ===\n");
+/* ============================= */
+/*          ft_read              */
+/* ============================= */
+void test_read(void)
+{
+    printf("\n=== ft_read ===\n");
 
-//     /* test avec un vrai fichier */
-//     int fd = open("/tmp/test_read.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
-//     write(fd, "hello read", 10);
-//     close(fd);
+    /* test avec un vrai fichier */
+    int fd = open("/tmp/test_read.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+    write(fd, "hello read", 10);
+    close(fd);
 
-//     char buf[50];
-//     memset(buf, 0, sizeof(buf));
-//     fd = open("/tmp/test_read.txt", O_RDONLY);
-//     errno = 0;
-//     ssize_t r1 = ft_read(fd, buf, 10);
-//     close(fd);
-//     printf("ft_read(fd, buf, 10) = %zd, buf = \"%s\" (attendu 10, \"hello read\")\n", r1, buf);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    char buf[50];
+    memset(buf, 0, sizeof(buf));
+    fd = open("/tmp/test_read.txt", O_RDONLY);
+    errno = 0;
+    ssize_t r1 = ft_read(fd, buf, 10);
+    close(fd);
+    printf("ft_read(fd, buf, 10) = %zd, buf = \"%s\" (attendu 10, \"hello read\")\n", r1, buf);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     ssize_t r2 = ft_read(-1, buf, 10);
-//     printf("ft_read(-1, buf, 10) = %zd (attendu -1)\n", r2);
-//     printf("  errno = %d (attendu 9)\n", errno);
-//     perror("  perror");
-// }
+    errno = 0;
+    ssize_t r2 = ft_read(-1, buf, 10);
+    printf("ft_read(-1, buf, 10) = %zd (attendu -1)\n", r2);
+    printf("  errno = %d (attendu 9)\n", errno);
+    perror("  perror");
+}
 
 // /* ============================= */
 // /*          ft_strdup            */
@@ -176,7 +176,7 @@ int main(void)
     /* test_strcpy(); */
     /* test_strcmp(); */
     test_write();
-    /* test_read(); */
+    test_read();
     /* test_strdup(); */
 
     printf("\n");
