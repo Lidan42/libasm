@@ -30,31 +30,31 @@ void test_strlen(void)
     printf("  errno = %d (attendu 0)\n", errno);
 }
 
-// /* ============================= */
-// /*          ft_strcpy            */
-// /* ============================= */
-// void test_strcpy(void)
-// {
-//     printf("\n=== ft_strcpy ===\n");
+/* ============================= */
+/*          ft_strcpy            */
+/* ============================= */
+void test_strcpy(void)
+{
+    printf("\n=== ft_strcpy ===\n");
 
-//     char dst1[50];
-//     errno = 0;
-//     ft_strcpy(dst1, "hello");
-//     printf("ft_strcpy(dst, \"hello\")       = \"%s\" (attendu \"hello\")\n", dst1);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    char dst1[50];
+    errno = 0;
+    ft_strcpy(dst1, "hello");
+    printf("ft_strcpy(dst, \"hello\")       = \"%s\" (attendu \"hello\")\n", dst1);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     char dst2[50];
-//     errno = 0;
-//     ft_strcpy(dst2, "");
-//     printf("ft_strcpy(dst, \"\")            = \"%s\" (attendu \"\")\n", dst2);
-//     printf("  errno = %d (attendu 0)\n", errno);
+    char dst2[50];
+    errno = 0;
+    ft_strcpy(dst2, "");
+    printf("ft_strcpy(dst, \"\")            = \"%s\" (attendu \"\")\n", dst2);
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     char dst3[50];
-//     errno = 0;
-//     ft_strcpy(dst3, "hello world");
-//     printf("ft_strcpy(dst, \"hello world\") = \"%s\" (attendu \"hello world\")\n", dst3);
-//     printf("  errno = %d (attendu 0)\n", errno);
-// }
+    char dst3[50];
+    errno = 0;
+    ft_strcpy(dst3, "hello world");
+    printf("ft_strcpy(dst, \"hello world\") = \"%s\" (attendu \"hello world\")\n", dst3);
+    printf("  errno = %d (attendu 0)\n", errno);
+}
 
 // /* ============================= */
 // /*          ft_strcmp            */
@@ -89,7 +89,20 @@ void test_strlen(void)
 //     printf("  errno = %d (attendu 0)\n", errno);
 // }
 
-/* ============================= */
+/* ===============global  ft_strcpy
+
+ft_strcpy:
+    mov rax, rdi
+.loop:
+    mov al, byte [rsi]
+    mov byte [rdi], al
+    cmp byte [rdi], 0
+    je  .exit
+    inc rsi
+    inc rdi
+    jmp .loop
+.exit
+    ret============== */
 /*          ft_write             */
 /* ============================= */
 void test_write(void)
@@ -173,7 +186,7 @@ void test_read(void)
 int main(void)
 {
     test_strlen();
-    /* test_strcpy(); */
+    test_strcpy();
     /* test_strcmp(); */
     test_write();
     test_read();

@@ -9,7 +9,8 @@ CFLAGS      := -Wall -Wextra -Werror
 
 SRCS        := ft_write.s \
 			ft_read.s \
-			ft_strlen.s
+			ft_strlen.s \
+			ft_strcpy.s
 
 OBJS        := $(SRCS:.s=.o)
 
@@ -37,7 +38,7 @@ $(NAME): $(OBJS)
 test: $(NAME)
 	@$(CC) $(CFLAGS) main.c -L. -lasm -o test_libasm
 	@echo "$(GREEN)✓ test_libasm compilé$(RESET)"
-	@./test_libasm
+	@valgrind ./test_libasm
  
 # ============================================================
  
