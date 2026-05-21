@@ -6,29 +6,29 @@
 #include <errno.h>
 #include "libasm.h"
 
-// /* ============================= */
-// /*          ft_strlen            */
-// /* ============================= */
-// void test_strlen(void)
-// {
-//     printf("\n=== ft_strlen ===\n");
+/* ============================= */
+/*          ft_strlen            */
+/* ============================= */
+void test_strlen(void)
+{
+    printf("\n=== ft_strlen ===\n");
 
-//     errno = 0;
-//     printf("ft_strlen(\"hello\")       = %zu (attendu 5)\n",  ft_strlen("hello"));
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    printf("ft_strlen(\"hello\")       = %zu (attendu 5)\n",  ft_strlen("hello"));
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     printf("ft_strlen(\"\")            = %zu (attendu 0)\n",  ft_strlen(""));
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    printf("ft_strlen(\"\")            = %zu (attendu 0)\n",  ft_strlen(""));
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     printf("ft_strlen(\"a\")           = %zu (attendu 1)\n",  ft_strlen("a"));
-//     printf("  errno = %d (attendu 0)\n", errno);
+    errno = 0;
+    printf("ft_strlen(\"a\")           = %zu (attendu 1)\n",  ft_strlen("a"));
+    printf("  errno = %d (attendu 0)\n", errno);
 
-//     errno = 0;
-//     printf("ft_strlen(\"hello world\") = %zu (attendu 11)\n", ft_strlen("hello world"));
-//     printf("  errno = %d (attendu 0)\n", errno);
-// }
+    errno = 0;
+    printf("ft_strlen(\"hello world\") = %zu (attendu 11)\n", ft_strlen("hello world"));
+    printf("  errno = %d (attendu 0)\n", errno);
+}
 
 // /* ============================= */
 // /*          ft_strcpy            */
@@ -172,7 +172,7 @@ void test_read(void)
 /* ============================= */
 int main(void)
 {
-    /* test_strlen(); */
+    test_strlen();
     /* test_strcpy(); */
     /* test_strcmp(); */
     test_write();

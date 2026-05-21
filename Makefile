@@ -8,7 +8,8 @@ CC          := gcc
 CFLAGS      := -Wall -Wextra -Werror
 
 SRCS        := ft_write.s \
-			ft_read.s
+			ft_read.s \
+			ft_strlen.s
 
 OBJS        := $(SRCS:.s=.o)
 
