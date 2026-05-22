@@ -7,16 +7,16 @@ extern ft_strcpy
 
 ft_strdup:
     push    rdi
-    call    ft_strlen
+    call    ft_strlen wrt ..plt
     inc     rax         ;pour le /0
     mov     rdi, rax
-    call    malloc
+    call    malloc wrt ..plt
     cmp     rax, 0
     je      .exit
     pop     rsi
     mov     rdi, rax    ;rsi et rdi pour arg strcpy
     push    rax         ;save le pointeur
-    call    ft_strcpy
+    call    ft_strcpy wrt ..plt
     pop     rax
     ret
 
