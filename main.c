@@ -141,31 +141,31 @@ void test_read(void)
     perror("  perror");
 }
 
-// /* ============================= */
-// /*          ft_strdup            */
-// /* ============================= */
-// void test_strdup(void)
-// {
-//     printf("\n=== ft_strdup ===\n");
+/* ============================= */
+/*          ft_strdup            */
+/* ============================= */
+void test_strdup(void)
+{
+    printf("\n=== ft_strdup ===\n");
 
-//     errno = 0;
-//     char *s1 = ft_strdup("hello");
-//     printf("ft_strdup(\"hello\")       = \"%s\" (attendu \"hello\")\n", s1);
-//     printf("  errno = %d (attendu 0)\n", errno);
-//     free(s1);
+    errno = 0;
+    char *s1 = ft_strdup("hello");
+    printf("ft_strdup(\"hello\")       = \"%s\" (attendu \"hello\")\n", s1);
+    printf("  errno = %d (attendu 0)\n", errno);
+    free(s1);
 
-//     errno = 0;
-//     char *s2 = ft_strdup("");
-//     printf("ft_strdup(\"\")            = \"%s\" (attendu \"\")\n", s2);
-//     printf("  errno = %d (attendu 0)\n", errno);
-//     free(s2);
+    errno = 0;
+    char *s2 = ft_strdup("");
+    printf("ft_strdup(\"\")            = \"%s\" (attendu \"\")\n", s2);
+    printf("  errno = %d (attendu 0)\n", errno);
+    free(s2);
 
-//     errno = 0;
-//     char *s3 = ft_strdup("hello world");
-//     printf("ft_strdup(\"hello world\") = \"%s\" (attendu \"hello world\")\n", s3);
-//     printf("  errno = %d (attendu 0)\n", errno);
-//     free(s3);
-// }
+    errno = 0;
+    char *s3 = ft_strdup("hello world");
+    printf("ft_strdup(\"hello world\") = \"%s\" (attendu \"hello world\")\n", s3);
+    printf("  errno = %d (attendu 0)\n", errno);
+    free(s3);
+}
 
 /* ============================= */
 /*            MAIN               */
@@ -177,7 +177,7 @@ int main(void)
     test_strcmp();
     test_write();
     test_read();
-    /* test_strdup(); */
+    test_strdup();
 
     printf("\n");
     return (0);

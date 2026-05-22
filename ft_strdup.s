@@ -2,26 +2,29 @@ global ft_strdup
 
 extern __errno_location
 extern malloc
+extern ft_strlen
+extern ft_strcpy
 
 ft_strdup:
     push    rdi
     call    ft_strlen
-    inc     rax
+    inc     rax         ;pour le /0
     mov     rdi, rax
     call    malloc
     cmp     rax, 0
     je      .exit
     pop     rsi
-    mov     rdi, rax
-    push    rax
+    mov     rdi, rax    ;rsi et rdi pour arg strcpy
+    push    rax         ;save le pointeur
     call    ft_strcpy
     pop     rax
     ret
 
 .exit:
-    pop     rdi
+    pop     rdi         ;stack alignement
     push    rax
     call    __errno_location wrt ..plt
+    mov     dword [rax], 12
     pop     rax
-    mov     rax, 0
+    xor     eax, eax
     ret

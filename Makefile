@@ -11,7 +11,8 @@ SRCS        := ft_write.s \
 			ft_read.s \
 			ft_strlen.s \
 			ft_strcpy.s \
-			ft_strcmp.s
+			ft_strcmp.s \
+			ft_strdup.s
 
 OBJS        := $(SRCS:.s=.o)
 
@@ -28,28 +29,28 @@ all: $(NAME)
  
 $(NAME): $(OBJS)
 	@$(AR) $(ARFLAGS) $@ $^
-	@echo "$(GREEN)✓ $(NAME) compilé$(RESET)"
+	@printf "%b\n" "$(GREEN)✓ $(NAME) compilé$(RESET)"
  
 %.o: %.s
 	@$(NASM) $(NASMFLAGS) $< -o $@
-	@echo "$(YELLOW)  asm $<$(RESET)"
+	@printf "%b\n" "$(YELLOW)  asm $<$(RESET)"
  
 # ============================================================
  
 test: $(NAME)
 	@$(CC) $(CFLAGS) main.c -L. -lasm -o test_libasm
-	@echo "$(GREEN)✓ test_libasm compilé$(RESET)"
+	@printf "%b\n" "$(GREEN)✓ test_libasm compilé$(RESET)"
 	@valgrind ./test_libasm
  
 # ============================================================
  
 clean:
 	@rm -f $(OBJS)
-	@echo "$(YELLOW)  objets supprimés$(RESET)"
+	@printf "%b\n" "$(YELLOW)  objets supprimés$(RESET)"
  
 fclean: clean
 	@rm -f $(NAME) test_libasm
-	@echo "$(YELLOW)  $(NAME) supprimé$(RESET)"
+	@printf "%b\n" "$(YELLOW)  $(NAME) supprimé$(RESET)"
  
 re: fclean all
  
